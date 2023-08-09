@@ -5,7 +5,7 @@ const Background = require('../../assets/background.png');
 
 const InitialScreen = ({ navigation }) => {
     const navigateToRestaurants = () => {
-        navigation.navigate('./restaurantListScreen.tsx');
+        navigation.navigate('restaurantListScreen');
     };
 
     return (
