@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Background = require("../../assets/background.png");
+const Background = require("../assets/imgs/background.png");
 
 const InitialScreen = () => {
   const navigation = useNavigation();
