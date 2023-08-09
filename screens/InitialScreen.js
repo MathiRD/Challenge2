@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   View,
@@ -10,9 +11,11 @@ import {
 
 const Background = require("../../assets/background.png");
 
-const InitialScreen = ({ navigation }) => {
+const InitialScreen = () => {
+  const navigation = useNavigation();
+
   const navigateToRestaurants = () => {
-    navigation.navigate("./restaurantListScreen.tsx");
+    navigation.navigate("restaurantListScreen");
   };
 
   return (
