@@ -4,45 +4,55 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  FlatList
-} from 'react-native'
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
-import { useNavigation } from '@react-navigation/native'
-import { ActivityIndicator } from 'react-native'
-import HeaderRestaurants from '../Components/Header'
-import { GlobalStyles } from '../constants/style'
+  FlatList,
+} from "react-native";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { ActivityIndicator } from "react-native";
+// import HeaderRestaurants from "../Components/Header";
+import HeaderRestaurants from "../components/Header";
+import { GlobalStyles } from "../constants/style";
+import useFetchRestaurants from "../services";
+// import { isLoading, data } from "../services";
+import LoadingOverlay from "../components/atoms/LoadingOverlay";
 
 const RestaurantListScreen = () => {
-  const [restaurants, setRestaurants] = useState([])
-  const [loading, setLoading] = useState(true)
+  // const [restaurants, setRestaurants] = useState([])
+  // const [loading, setLoading] = useState(true)
 
-  const navigation = useNavigation()
+  // useEffect(() => {
+  //   axios
+  //   .get('https://8jcox47hg2.execute-api.us-east-2.amazonaws.com/dev')
+  //   .then(response => {
+  //     setRestaurants(response.data.body.restaurants)
+  //     setLoading(false)
+  //   })
+  //   .catch(error => {
+  //     console.error(error)
+  //       setLoading(false)
+  //     })
+  //   })
+
+  //   if (loading) {
+  //     return <ActivityIndicator />
+  //   }
+
+  const restaurants = useFetchRestaurants();
+
+  if (isLoading) {
+    return <LoadingOverlay />;
+  }
+
+  const navigation = useNavigation();
 
   const navigateToDetails = () => {
-    navigation.navigate('DetailsScreen')
-  }
-
-  useEffect(() => {
-    axios
-      .get('https://8jcox47hg2.execute-api.us-east-2.amazonaws.com/dev')
-      .then(response => {
-        setRestaurants(response.data.body.restaurants)
-        setLoading(false)
-      })
-      .catch(error => {
-        console.error(error)
-        setLoading(false)
-      })
-  })
-
-  if (loading) {
-    return <ActivityIndicator />
-  }
+    navigation.navigate("DetailsScreen");
+  };
 
   return (
     <View style={styles.container}>
-      <HeaderRestaurants title={'Restaurantes'} />
+      <HeaderRestaurants title={"Restaurantes"} />
       <View style={styles.containerRestaurants}>
         {/* <Text style={styles.RestaurantCardText}>Hello</Text> */}
         <TouchableOpacity onPress={navigateToDetails}>
@@ -51,7 +61,7 @@ const RestaurantListScreen = () => {
       </View>
       <FlatList
         data={restaurants}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
@@ -80,20 +90,20 @@ const RestaurantListScreen = () => {
         )}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: GlobalStyles.colors.primary400,
-    flex: 1
+    flex: 1,
   },
   containerRestaurants: {
     marginTop: 10,
-    alignItems: 'center'
+    alignItems: "center",
   },
   RestaurantCardText: {
-    color: GlobalStyles.colors.primary0
+    color: GlobalStyles.colors.primary0,
   },
   card: {
     width: 370,
@@ -103,32 +113,32 @@ const styles = StyleSheet.create({
     marginHorizontal: 22,
     borderRadius: 12,
     backgroundColor: GlobalStyles.colors.primary100,
-    overflow: 'hidden',
-    elevation: 5
+    overflow: "hidden",
+    elevation: 5,
   },
   cardImage: {
-    width: '100%',
-    height: '100%'
+    width: "100%",
+    height: "100%",
   },
   cardInfo: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
-    width: '100%',
+    width: "100%",
     padding: 10,
     borderBottomLeftRadius: 12,
-    borderBottomRightRadius: 12
+    borderBottomRightRadius: 12,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
     elevation: 5,
-    lineHeight: 32
+    lineHeight: 32,
   },
   menuImage: {
     width: 50,
     height: 50,
     borderRadius: 8,
-    marginHorizontal: 5
-  }
-})
+    marginHorizontal: 5,
+  },
+});
 
-export default RestaurantListScreen
+export default RestaurantListScreen;
