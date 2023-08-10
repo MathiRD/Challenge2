@@ -9,10 +9,20 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
+import App from "../App";
 
 const Background = require("../assets/imgs/background.png");
 
 const InitialScreen = () => {
+  let [fontsLoaded] = useFonts({
+    "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   const navigation = useNavigation();
 
   const navigateToRestaurants = () => {
@@ -24,7 +34,15 @@ const InitialScreen = () => {
       <ImageBackground source={Background} style={styles.BackgroundImageStyle}>
         <View style={styles.content}>
           <View style={styles.MainScreenTextContainer}>
-            <Text style={styles.MainScreenText}> FIND D BEST </Text>
+            <Text
+              style={[
+                styles.MainScreenText,
+                { fontFamily: "BebasNeue-Regular" },
+              ]}
+            >
+              {" "}
+              FIND D BEST{" "}
+            </Text>
             <Text style={styles.MainScreenSubText}> Restaurant </Text>
           </View>
           <TouchableOpacity
