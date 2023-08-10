@@ -14,8 +14,9 @@ import App from "../App";
 import { GlobalStyles } from "../constants/style";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
+import Background from "../assets/imgs/background.png";
 
-const Background = require("../assets/imgs/background.png");
+// const Background = require("../assets/imgs/background.png");
 
 SplashScreen.preventAutoHideAsync();
 

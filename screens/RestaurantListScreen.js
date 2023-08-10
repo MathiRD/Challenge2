@@ -52,28 +52,29 @@ const RestaurantListScreen = () => {
   return (
     <View style={styles.container}>
       <HeaderRestaurants title={"Restaurantes"} />
-      <View style={styles.containerRestaurants}>
-        <TouchableOpacity onPress={navigateToDetails}>
+      {/* <View style={styles.containerRestaurants}> */}
+      {/* <TouchableOpacity onPress={navigateToDetails}>
           <Text style={styles.RestaurantCardText}></Text>
-        </TouchableOpacity>
-      </View>
+        </TouchableOpacity> */}
+      {/* </View> */}
       <FlatList
         data={data}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => navigateToDetails(item)}
-          >
-            <Image
-              source={{ uri: item.coverImageUrl }}
-              style={styles.cardImage}
-              resizeMode="cover"
-            />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardTitle}>{item.name}</Text>
-            </View>
-            {/* <FlatList
+          <View style={styles.cardContainer}>
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => navigateToDetails(item)}
+            >
+              <Image
+                source={{ uri: item.coverImageUrl }}
+                style={styles.cardImage}
+                resizeMode="cover"
+              />
+              <View style={styles.cardInfo}>
+                <Text style={styles.cardTitle}>{item.name}</Text>
+              </View>
+              {/* <FlatList
               data={item.menu}
               keyExtractor={(menuItem, index) => `${item.id}-${index}`}
               horizontal
@@ -84,7 +85,8 @@ const RestaurantListScreen = () => {
                 />
               )}
             /> */}
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
         )}
       />
     </View>
@@ -96,9 +98,10 @@ const styles = StyleSheet.create({
     backgroundColor: GlobalStyles.colors.primary400,
     flex: 1,
   },
-  containerRestaurants: {
-    marginTop: 10,
-    alignItems: "center",
+  cardContainer: {
+    // marginTop: 10,
+    // alignItems: "center",
+    // flex: 1,
   },
   RestaurantCardText: {
     color: GlobalStyles.colors.primary0,
