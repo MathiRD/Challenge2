@@ -18,6 +18,9 @@ import useFetchRestaurants from "../services";
 import LoadingOverlay from "../components/atoms/LoadingOverlay";
 
 const RestaurantListScreen = () => {
+  const { data, isLoading } = useFetchRestaurants();
+  const navigation = useNavigation();
+
   // const [restaurants, setRestaurants] = useState([])
   // const [loading, setLoading] = useState(true)
 
@@ -38,13 +41,9 @@ const RestaurantListScreen = () => {
   //     return <ActivityIndicator />
   //   }
 
-  const restaurants = useFetchRestaurants();
-
   if (isLoading) {
     return <LoadingOverlay />;
   }
-
-  const navigation = useNavigation();
 
   const navigateToDetails = () => {
     navigation.navigate("DetailsScreen");
@@ -54,13 +53,12 @@ const RestaurantListScreen = () => {
     <View style={styles.container}>
       <HeaderRestaurants title={"Restaurantes"} />
       <View style={styles.containerRestaurants}>
-        {/* <Text style={styles.RestaurantCardText}>Hello</Text> */}
         <TouchableOpacity onPress={navigateToDetails}>
           <Text style={styles.RestaurantCardText}></Text>
         </TouchableOpacity>
       </View>
       <FlatList
-        data={restaurants}
+        data={data}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
@@ -75,7 +73,7 @@ const RestaurantListScreen = () => {
             <View style={styles.cardInfo}>
               <Text style={styles.cardTitle}>{item.name}</Text>
             </View>
-            <FlatList
+            {/* <FlatList
               data={item.menu}
               keyExtractor={(menuItem, index) => `${item.id}-${index}`}
               horizontal
@@ -85,7 +83,7 @@ const RestaurantListScreen = () => {
                   style={styles.menuImage}
                 />
               )}
-            />
+            /> */}
           </TouchableOpacity>
         )}
       />

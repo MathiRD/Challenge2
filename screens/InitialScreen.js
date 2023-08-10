@@ -16,14 +16,14 @@ import { GlobalStyles } from "../constants/style";
 const Background = require("../assets/imgs/background.png");
 
 const InitialScreen = () => {
-  let [fontsLoaded] = useFonts({
-    "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
-    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
-  });
+  // let [fontsLoaded] = useFonts({
+  //   "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
+  //   "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
+  // });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
 
   const navigation = useNavigation();
 
@@ -40,7 +40,7 @@ const InitialScreen = () => {
               <Text
                 style={[
                   styles.MainScreenText,
-                  { fontFamily: "BebasNeue-Regular" },
+                  // { fontFamily: "BebasNeue-Regular" },
                 ]}
               >
                 FIND D BEST
@@ -50,7 +50,7 @@ const InitialScreen = () => {
               <Text
                 style={[
                   styles.MainScreenSubText,
-                  { fontFamily: "Poppins-Regular" },
+                  // { fontFamily: "Poppins-Regular" },
                 ]}
               >
                 Restaurant
@@ -62,7 +62,10 @@ const InitialScreen = () => {
             onPress={navigateToRestaurants}
           >
             <Text
-              style={[styles.buttonText, { fontFamily: "Poppins-Regular" }]}
+              style={[
+                styles.buttonText,
+                // { fontFamily: "Poppins-Regular" }
+              ]}
             >
               Acessar
             </Text>
