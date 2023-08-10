@@ -8,6 +8,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
+import { useFonts } from "expo-font";
 
 const Background = require("../assets/imgs/background.png");
 
