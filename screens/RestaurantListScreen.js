@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 22,
     borderRadius: 12,
-    backgroundColor: '#43ff64d9',
+    backgroundColor: GlobalStyles.colors.primary100,
     overflow: 'hidden',
     elevation: 5
   },
