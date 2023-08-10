@@ -11,6 +11,7 @@ import {
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import App from "../App";
+import { GlobalStyles } from "../constants/style";
 
 const Background = require("../assets/imgs/background.png");
 
@@ -35,30 +36,36 @@ const InitialScreen = () => {
       <ImageBackground source={Background} style={styles.BackgroundImageStyle}>
         <View style={styles.content}>
           <View style={styles.MainScreenTextContainer}>
-            <Text
-              style={[
-                styles.MainScreenText,
-                { fontFamily: "BebasNeue-Regular" },
-              ]}
-            >
-              {" "}
-              FIND D BEST{" "}
-            </Text>
-            <Text
-              style={[
-                styles.MainScreenSubText,
-                { fontFamily: "Poppins-Regular" },
-              ]}
-            >
-              {" "}
-              Restaurant{" "}
-            </Text>
+            <View style={styles.MSContainer}>
+              <Text
+                style={[
+                  styles.MainScreenText,
+                  { fontFamily: "BebasNeue-Regular" },
+                ]}
+              >
+                FIND D BEST
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={[
+                  styles.MainScreenSubText,
+                  { fontFamily: "Poppins-Regular" },
+                ]}
+              >
+                Restaurant
+              </Text>
+            </View>
           </View>
           <TouchableOpacity
             style={styles.button}
             onPress={navigateToRestaurants}
           >
-            <Text style={styles.buttonText}>Acessar</Text>
+            <Text
+              style={[styles.buttonText, { fontFamily: "Poppins-Regular" }]}
+            >
+              Acessar
+            </Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -72,38 +79,32 @@ const styles = StyleSheet.create({
   },
   BackgroundImageStyle: {
     flex: 1,
-    resizeMode: "cover",
-    justifyContent: "flex-end",
   },
   content: {
     alignItems: "center",
     flex: 1,
-    borderColor: "red",
-    borderWidth: 1,
   },
+  MSContainer: {
+    borderCollor: "red",
+    borderRadius: 1,
+  },
+  MSSubContainer: {},
   MainScreenTextContainer: {
     flex: 1,
     alignItems: "center",
-    marginBottom: 40,
-    marginHorizontal: 25,
-    paddingTop: 100,
-    borderColor: "blue",
-    borderWidth: 1,
+    paddingTop: 70,
   },
   MainScreenText: {
     textAlign: "center",
     fontSize: 72,
     fontWeight: "400",
-    color: "#fff",
-    fontFamily: "Bebas Neue",
-    borderColor: "green",
-    borderWidth: 1,
+    color: GlobalStyles.colors.primary0,
   },
   MainScreenSubText: {
-    fontSize: 20,
-    color: "#ffffff",
-    borderColor: "yellow",
-    borderWidth: 1,
+    fontSize: 24,
+    color: "#FFF",
+    textAlign: "center",
+    fontWeight: "400",
   },
   button: {
     backgroundColor: "#E73030",
@@ -113,11 +114,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    width: "100%",
+    width: "90%",
+    marginBottom: 20,
   },
   buttonText: {
     fontSize: 20,
-    color: "#FFFFFF",
+    color: "#FFF",
+    textAlign: "center",
+    fontWeight: "400",
+    letterSpacing: 0.3,
   },
 });
 
