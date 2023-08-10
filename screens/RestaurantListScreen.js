@@ -45,8 +45,10 @@ const RestaurantListScreen = () => {
     return <LoadingOverlay />;
   }
 
-  const navigateToDetails = () => {
-    navigation.navigate("DetailsScreen");
+  const navigateToDetails = (id) => {
+    navigation.navigate("DetailsScreen", {
+      restaurantId: id,
+    });
   };
 
   return (
@@ -64,7 +66,7 @@ const RestaurantListScreen = () => {
           <View style={styles.cardContainer}>
             <TouchableOpacity
               style={styles.card}
-              onPress={() => navigateToDetails(item)}
+              onPress={() => navigateToDetails(item.id)}
             >
               <Image
                 source={{ uri: item.coverImageUrl }}
