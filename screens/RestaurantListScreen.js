@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { ActivityIndicator } from 'react-native'
 import HeaderRestaurants from '../Components/Header'
+import { GlobalStyles } from '../constants/style'
 
 const RestaurantListScreen = () => {
   const [restaurants, setRestaurants] = useState([])
@@ -42,7 +43,7 @@ const RestaurantListScreen = () => {
   return (
     <View style={styles.container}>
       <HeaderRestaurants title={'Restaurantes'} />
-      <View style={styles.textProvisory}>
+      <View style={styles.containerRestaurants}>
         {/* <Text style={styles.RestaurantCardText}>Hello</Text> */}
         <TouchableOpacity onPress={navigateToDetails}>
           <Text style={styles.RestaurantCardText}></Text>
@@ -84,15 +85,15 @@ const RestaurantListScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#2c2c2e',
+    backgroundColor: GlobalStyles.colors.primary400,
     flex: 1
   },
-  textProvisory: {
-    marginTop: 100,
+  containerRestaurants: {
+    marginTop: 10,
     alignItems: 'center'
   },
   RestaurantCardText: {
-    color: '#fff'
+    color: GlobalStyles.colors.primary0
   },
   card: {
     width: 370,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 12
   },
   cardTitle: {
-    color: '#fff',
+    color: GlobalStyles.colors.primary0,
     elevation: 5,
     lineHeight: 32
   },
