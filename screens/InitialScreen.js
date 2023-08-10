@@ -12,27 +12,36 @@ import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import App from "../App";
 import { GlobalStyles } from "../constants/style";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
 
 const Background = require("../assets/imgs/background.png");
 
+SplashScreen.preventAutoHideAsync();
+
 const InitialScreen = () => {
-  // let [fontsLoaded] = useFonts({
-  //   "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
-  //   "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
-  // });
-
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // }
-
   const navigation = useNavigation();
+  const [fontsLoaded] = useFonts({
+    "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
+    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   const navigateToRestaurants = () => {
     navigation.navigate("restaurantListScreen");
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <ImageBackground source={Background} style={styles.BackgroundImageStyle}>
         <View style={styles.content}>
           <View style={styles.MainScreenTextContainer}>
@@ -40,7 +49,7 @@ const InitialScreen = () => {
               <Text
                 style={[
                   styles.MainScreenText,
-                  // { fontFamily: "BebasNeue-Regular" },
+                  { fontFamily: "BebasNeue-Regular" },
                 ]}
               >
                 FIND D BEST
@@ -50,7 +59,7 @@ const InitialScreen = () => {
               <Text
                 style={[
                   styles.MainScreenSubText,
-                  // { fontFamily: "Poppins-Regular" },
+                  { fontFamily: "Poppins-Regular" },
                 ]}
               >
                 Restaurant
@@ -62,10 +71,7 @@ const InitialScreen = () => {
             onPress={navigateToRestaurants}
           >
             <Text
-              style={[
-                styles.buttonText,
-                // { fontFamily: "Poppins-Regular" }
-              ]}
+              style={[styles.buttonText, { fontFamily: "Poppins-Regular" }]}
             >
               Acessar
             </Text>
