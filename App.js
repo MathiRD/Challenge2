@@ -14,12 +14,16 @@ export default function App() {
         initialRouteName="InitialScreen"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="InitialScreen" component={InitialScreen} />
+        <Stack.Screen 
+          name="InitialScreen" 
+          component={InitialScreen} />
         <Stack.Screen
           name="restaurantListScreen"
           component={RestaurantListScreen}
         />
-        <Stack.Screen name="Detalhes" component={DetailsScreen} />
+        <Stack.Screen 
+          name="DetailsScreen" 
+          component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
