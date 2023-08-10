@@ -17,6 +17,7 @@ const Background = require("../assets/imgs/background.png");
 const InitialScreen = () => {
   let [fontsLoaded] = useFonts({
     "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
+    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
   });
 
   if (!fontsLoaded) {
@@ -43,13 +44,21 @@ const InitialScreen = () => {
               {" "}
               FIND D BEST{" "}
             </Text>
-            <Text style={styles.MainScreenSubText}> Restaurant </Text>
+            <Text
+              style={[
+                styles.MainScreenSubText,
+                { fontFamily: "Poppins-Regular" },
+              ]}
+            >
+              {" "}
+              Restaurant{" "}
+            </Text>
           </View>
           <TouchableOpacity
             style={styles.button}
             onPress={navigateToRestaurants}
           >
-            <Text style={styles.buttonText}>Acess</Text>
+            <Text style={styles.buttonText}>Acessar</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -68,16 +77,18 @@ const styles = StyleSheet.create({
   },
   content: {
     alignItems: "center",
-    marginBottom: 40,
-    marginHorizontal: 25,
+    flex: 1,
+    borderColor: "red",
+    borderWidth: 1,
   },
   MainScreenTextContainer: {
-    width: 260,
-    height: 600,
+    flex: 1,
     alignItems: "center",
     marginBottom: 40,
     marginHorizontal: 25,
     paddingTop: 100,
+    borderColor: "blue",
+    borderWidth: 1,
   },
   MainScreenText: {
     textAlign: "center",
@@ -85,10 +96,14 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     color: "#fff",
     fontFamily: "Bebas Neue",
+    borderColor: "green",
+    borderWidth: 1,
   },
   MainScreenSubText: {
     fontSize: 20,
     color: "#ffffff",
+    borderColor: "yellow",
+    borderWidth: 1,
   },
   button: {
     backgroundColor: "#E73030",
