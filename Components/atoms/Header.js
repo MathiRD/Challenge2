@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { GlobalStyles } from '../constants/style'
+import { GlobalStyles } from '../../constants/style'
 
 const HeaderRestaurants = ({ title }) => {
   return (
