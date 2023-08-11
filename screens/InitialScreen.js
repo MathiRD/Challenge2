@@ -1,13 +1,13 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
-import { useFonts } from 'expo-font';
-import { GlobalStyles } from '../constants/style';
-import * as SplashScreen from 'expo-splash-screen';
-import { useCallback } from 'react';
-import Background from '../assets/imgs/background.png';
-import Button from '../component/atoms/Button';
-import Button1 from '../component/atoms/Button';
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { useFonts } from "expo-font";
+import { GlobalStyles } from "../constants/style";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
+import Background from "../assets/imgs/background.png";
+import Button from "../component/atoms/Button";
+import Button1 from "../component/atoms/Button";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -15,12 +15,13 @@ const InitialScreen = () => {
   const navigation = useNavigation();
 
   const [fontsLoaded] = useFonts({
-    'BebasNeue-Regular': require('../assets/fonts/BebasNeue-Regular.ttf'),
-    'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
+    "BebasNeue-Regular": require("../assets/fonts/BebasNeue-Regular.ttf"),
+    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
+    "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
   });
 
   const navegarParaRestaurantes = () => {
-    navigation.navigate('restaurantListScreen');
+    navigation.navigate("restaurantListScreen");
   };
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -64,32 +65,32 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
   },
   MSContainer: {
-    borderCollor: 'red',
+    borderCollor: "red",
     borderRadius: 1,
   },
   MSSubContainer: {},
   MainScreenTextContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     paddingTop: 70,
   },
   MainScreenText: {
-    fontFamily: 'BebasNeue-Regular',
-    textAlign: 'center',
+    fontFamily: "BebasNeue-Regular",
+    textAlign: "center",
     fontSize: 72,
-    fontWeight: '400',
+    fontWeight: "400",
     color: GlobalStyles.colors.primary0,
   },
   MainScreenSubText: {
     fontSize: 24,
-    fontFamily: 'Poppins-Regular',
+    fontFamily: "Poppins-Regular",
     color: GlobalStyles.colors.primary0,
-    textAlign: 'center',
-    fontWeight: '400',
+    textAlign: "center",
+    fontWeight: "400",
   },
   buttonInicial: {
     backgroundColor: GlobalStyles.colors.buttonPrincipal,

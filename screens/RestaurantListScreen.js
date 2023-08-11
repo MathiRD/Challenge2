@@ -5,14 +5,14 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-} from 'react-native';
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import HeaderRestaurants from '../component/atoms/Header';
-import { GlobalStyles } from '../constants/style';
-import useFetchRestaurants from '../services';
+} from "react-native";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import HeaderRestaurants from "../component/atoms/Header";
+import { GlobalStyles } from "../constants/style";
+import useFetchRestaurants from "../services";
 
-import LoadingOverlay from '../component/atoms/LoadingOverlay';
+import LoadingOverlay from "../component/atoms/LoadingOverlay";
 
 const RestaurantListScreen = () => {
   const { data, isLoading } = useFetchRestaurants();
@@ -24,7 +24,7 @@ const RestaurantListScreen = () => {
 
   return (
     <View style={styles.container}>
-      <HeaderRestaurants title={'Restaurantes'} />
+      <HeaderRestaurants title={"Restaurantes"} />
 
       <FlatList
         data={data}
@@ -34,7 +34,7 @@ const RestaurantListScreen = () => {
             <TouchableOpacity
               style={styles.card}
               onPress={() => {
-                navigation.navigate('DetailsScreen', {
+                navigation.navigate("DetailsScreen", {
                   restaurantId: item.id,
                 });
               }}
@@ -61,40 +61,37 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cardContainer: {
-    // marginTop: 10,
-    // alignItems: "center",
-    // flex: 1,
+    alignItems: "center",
   },
   RestaurantCardText: {
     color: GlobalStyles.colors.primary0,
   },
   card: {
-    width: 370,
+    width: "93%",
     height: 150,
     flexShrink: 0,
     marginVertical: 10,
     marginHorizontal: 22,
     borderRadius: 12,
-    backgroundColor: GlobalStyles.colors.primary100,
-    overflow: 'hidden',
+    overflow: "hidden",
     elevation: 5,
   },
   cardImage: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   },
   cardInfo: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
-    width: '100%',
+    width: "100%",
     padding: 10,
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
-    elevation: 5,
-    lineHeight: 32,
+    fontFamily: "Poppins-Bold",
+    fontSize: 32,
   },
   menuImage: {
     width: 50,
