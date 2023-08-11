@@ -6,8 +6,7 @@ import { GlobalStyles } from '../constants/style';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import Background from '../assets/imgs/background.png';
-// import Button from '../Components/atoms/Button'
-import Button from '../components/atoms/Button';
+import Button from '../component/atoms/Button';
 // const Background = require("../assets/imgs/background.png");
 
 SplashScreen.preventAutoHideAsync();
