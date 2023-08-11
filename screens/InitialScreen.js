@@ -7,6 +7,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import Background from '../assets/imgs/background.png';
 import Button from '../component/atoms/Button';
+import Button1 from '../component/atoms/Button';
 
 SplashScreen.preventAutoHideAsync();
 

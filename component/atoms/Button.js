@@ -1,52 +1,37 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Pressable,
-} from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { GlobalStyles } from '../../constants/style';
 
 const Button = ({ children, onClick, style }) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.botao} onPress={onClick}>
-        <Text style={[styles.textoBotao, { fontFamily: 'Poppins-Regular' }]}>
-          {children}
-        </Text>
-      </TouchableOpacity>
+    <View style={style}>
+      <Pressable
+        style={({ pressed }) => pressed && styles.pressed}
+        onPress={onClick}
+      >
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>{children}</Text>
+        </View>
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  button: {
+    borderRadius: 4,
+    padding: 8,
+    backgroundColor: GlobalStyles.colors.primary500,
   },
-  botao: {
-    backgroundColor: GlobalStyles.colors.buttonPrincipal,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: GlobalStyles.colors.buttonBorder,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
-    width: '90%',
-    marginBottom: 20,
-    paddingHorizontal: 120,
-    height: 50,
-    alignItems: 'center',
-    marginTop: 250,
-  },
-  textoBotao: {
-    fontSize: 20,
+  buttonText: {
     color: GlobalStyles.colors.primary0,
     textAlign: 'center',
-    fontWeight: '400',
-    letterSpacing: 0.3,
-    fontFamily: GlobalStyles.fonts.poppins,
+    fontFamily: 'Poppins-Regular',
+  },
+  pressed: {
+    opacity: 0.75,
+    backgroundColor: GlobalStyles.colors.primary100,
+    borderRadius: 4,
   },
 });
 
