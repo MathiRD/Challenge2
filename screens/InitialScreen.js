@@ -44,7 +44,12 @@ const InitialScreen = () => {
               <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
             </View>
           </View>
-          <Button onClick={navegarParaRestaurantes}>Acessar</Button>
+          <Button
+            onClick={navegarParaRestaurantes}
+            style={styles.buttonInicial}
+          >
+            Acessar
+          </Button>
         </View>
       </ImageBackground>
     </View>
@@ -85,6 +90,12 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.primary0,
     textAlign: 'center',
     fontWeight: '400',
+  },
+  buttonInicial: {
+    backgroundColor: GlobalStyles.colors.buttonPrincipal,
+    marginBottom: 25,
+    borderRadius: 8,
+    marginVertical: 25,
   },
 });
 

@@ -19,19 +19,19 @@ const Button = ({ children, onClick, style }) => {
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 4,
-    padding: 8,
-    backgroundColor: GlobalStyles.colors.primary500,
+    paddingHorizontal: 120,
+    paddingVertical: 10,
   },
   buttonText: {
     color: GlobalStyles.colors.primary0,
     textAlign: 'center',
     fontFamily: 'Poppins-Regular',
+    fontSize: 20,
   },
   pressed: {
     opacity: 0.75,
     backgroundColor: GlobalStyles.colors.primary100,
-    borderRadius: 4,
+    borderRadius: 8,
   },
 });
 
