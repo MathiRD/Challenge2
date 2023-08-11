@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     color: "#FFF",
     textAlign: "center",
     fontWeight: "400",
+    marginTop: -10
   },
   button: {
     backgroundColor: "#E73030",

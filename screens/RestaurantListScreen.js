@@ -11,11 +11,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ActivityIndicator } from "react-native";
 // import HeaderRestaurants from "../Components/Header";
-import HeaderRestaurants from "../components/Header";
+import HeaderRestaurants from "../Components/atoms/Header";
 import { GlobalStyles } from "../constants/style";
 import useFetchRestaurants from "../services";
 // import { isLoading, data } from "../services";
-import LoadingOverlay from "../components/atoms/LoadingOverlay";
+import LoadingOverlay from "../Components/atoms/LoadingOverlay";
 
 const RestaurantListScreen = () => {
   const { data, isLoading } = useFetchRestaurants();
