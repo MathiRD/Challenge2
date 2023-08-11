@@ -6,13 +6,12 @@ import { GlobalStyles } from '../constants/style'
 import * as SplashScreen from 'expo-splash-screen'
 import { useCallback } from 'react'
 import Background from '../assets/imgs/background.png'
-
+import Button from '../Components/atoms/Button'
 // const Background = require("../assets/imgs/background.png");
 
 SplashScreen.preventAutoHideAsync()
 
 const InitialScreen = () => {
-  const navigation = useNavigation()
   const [fontsLoaded] = useFonts({
     'BebasNeue-Regular': require('../assets/fonts/BebasNeue-Regular.ttf'),
     'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf')

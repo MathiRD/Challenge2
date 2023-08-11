@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import useFetchRestaurants from "../services";
-import { GlobalStyles } from "../constants/style";
-import LoadingOverlay from "../Components/atoms/LoadingOverlay";
-=======
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import useFetchRestaurants from '../services'
 import { GlobalStyles } from '../constants/style'
-import LoadingOverlay from '../components/atoms/LoadingOverlay'
->>>>>>> 690b8f1bcf0fd4660b3e98e1cf43c918763b304c
+import LoadingOverlay from '../Components/atoms/LoadingOverlay'
 
 const RestaurantDetailsScreen = ({ route }) => {
   const { data, isLoading } = useFetchRestaurants()

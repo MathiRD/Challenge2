@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 120,
     height: 50,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 250
   },
   textoBotao: {
     fontSize: 20,
