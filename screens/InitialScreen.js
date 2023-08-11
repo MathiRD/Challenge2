@@ -1,15 +1,7 @@
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity
-} from 'react-native'
+import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 import { useFonts } from 'expo-font'
-import AppLoading from 'expo-app-loading'
-import App from '../App'
 import { GlobalStyles } from '../constants/style'
 import * as SplashScreen from 'expo-splash-screen'
 import { useCallback } from 'react'
