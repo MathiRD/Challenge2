@@ -1,29 +1,29 @@
-import { useNavigation } from '@react-navigation/native'
-import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { GlobalStyles } from '../../constants/style'
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
+import { GlobalStyles } from '../../constants/style';
 
-const Button = () => {
-  const navigation = useNavigation()
-
-  const navegarParaRestaurantes = () => {
-    navigation.navigate('restaurantListScreen')
-  }
-
+const Button = ({ children, onClick, style }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.botao} onPress={navegarParaRestaurantes}>
+      <TouchableOpacity style={styles.botao} onPress={onClick}>
         <Text style={[styles.textoBotao, { fontFamily: 'Poppins-Regular' }]}>
-          Acessar
+          {children}
         </Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   botao: {
     backgroundColor: GlobalStyles.colors.buttonPrincipal,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 120,
     height: 50,
     alignItems: 'center',
-    marginTop: 250
+    marginTop: 250,
   },
   textoBotao: {
     fontSize: 20,
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '400',
     letterSpacing: 0.3,
-    fontFamily: GlobalStyles.fonts.poppins
-  }
-})
+    fontFamily: GlobalStyles.fonts.poppins,
+  },
+});
 
-export default Button
+export default Button;

@@ -11,11 +11,16 @@ import Button from '../component/atoms/Button';
 SplashScreen.preventAutoHideAsync();
 
 const InitialScreen = () => {
+  const navigation = useNavigation();
+
   const [fontsLoaded] = useFonts({
     'BebasNeue-Regular': require('../assets/fonts/BebasNeue-Regular.ttf'),
     'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
   });
 
+  const navegarParaRestaurantes = () => {
+    navigation.navigate('restaurantListScreen');
+  };
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
@@ -38,7 +43,7 @@ const InitialScreen = () => {
               <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
             </View>
           </View>
-          <Button />
+          <Button onClick={navegarParaRestaurantes}>Acessar</Button>
         </View>
       </ImageBackground>
     </View>
