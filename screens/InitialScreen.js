@@ -1,30 +1,31 @@
-import { useNavigation } from '@react-navigation/native'
-import React from 'react'
-import { View, Text, StyleSheet, ImageBackground } from 'react-native'
-import { useFonts } from 'expo-font'
-import { GlobalStyles } from '../constants/style'
-import * as SplashScreen from 'expo-splash-screen'
-import { useCallback } from 'react'
-import Background from '../assets/imgs/background.png'
-import Button from '../Components/atoms/Button'
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { useFonts } from 'expo-font';
+import { GlobalStyles } from '../constants/style';
+import * as SplashScreen from 'expo-splash-screen';
+import { useCallback } from 'react';
+import Background from '../assets/imgs/background.png';
+// import Button from '../Components/atoms/Button'
+import Button from '../components/atoms/Button';
 // const Background = require("../assets/imgs/background.png");
 
-SplashScreen.preventAutoHideAsync()
+SplashScreen.preventAutoHideAsync();
 
 const InitialScreen = () => {
   const [fontsLoaded] = useFonts({
     'BebasNeue-Regular': require('../assets/fonts/BebasNeue-Regular.ttf'),
-    'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf')
-  })
+    'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
+  });
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      await SplashScreen.hideAsync()
+      await SplashScreen.hideAsync();
     }
-  }, [fontsLoaded])
+  }, [fontsLoaded]);
 
   if (!fontsLoaded) {
-    return null
+    return null;
   }
 
   return (
@@ -36,7 +37,7 @@ const InitialScreen = () => {
               <Text
                 style={[
                   styles.MainScreenText,
-                  { fontFamily: 'BebasNeue-Regular' }
+                  // { fontFamily: 'BebasNeue-Regular' }
                 ]}
               >
                 FIND D BEST
@@ -46,7 +47,7 @@ const InitialScreen = () => {
               <Text
                 style={[
                   styles.MainScreenSubText,
-                  { fontFamily: 'Poppins-Regular' }
+                  // { fontFamily: 'Poppins-Regular' }
                 ]}
               >
                 Restaurant
@@ -57,42 +58,44 @@ const InitialScreen = () => {
         </View>
       </ImageBackground>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   BackgroundImageStyle: {
-    flex: 1
+    flex: 1,
   },
   content: {
     alignItems: 'center',
-    flex: 1
+    flex: 1,
   },
   MSContainer: {
     borderCollor: 'red',
-    borderRadius: 1
+    borderRadius: 1,
   },
   MSSubContainer: {},
   MainScreenTextContainer: {
     flex: 1,
     alignItems: 'center',
-    paddingTop: 70
+    paddingTop: 70,
   },
   MainScreenText: {
+    fontFamily: 'BebasNeue-Regular',
     textAlign: 'center',
     fontSize: 72,
     fontWeight: '400',
-    color: GlobalStyles.colors.primary0
+    color: GlobalStyles.colors.primary0,
   },
   MainScreenSubText: {
     fontSize: 24,
+    fontFamily: 'Poppins-Regular',
     color: GlobalStyles.colors.primary0,
     textAlign: 'center',
-    fontWeight: '400'
-  }
-})
+    fontWeight: '400',
+  },
+});
 
-export default InitialScreen
+export default InitialScreen;

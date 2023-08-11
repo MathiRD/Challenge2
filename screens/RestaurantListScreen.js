@@ -5,17 +5,19 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-} from "react-native";
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { ActivityIndicator } from "react-native";
+} from 'react-native';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { ActivityIndicator } from 'react-native';
 // import HeaderRestaurants from "../Components/Header";
-import HeaderRestaurants from "../Components/atoms/Header";
-import { GlobalStyles } from "../constants/style";
-import useFetchRestaurants from "../services";
+// import HeaderRestaurants from "../Components/atoms/Header";
+import HeaderRestaurants from '../components/atoms/Header';
+import { GlobalStyles } from '../constants/style';
+import useFetchRestaurants from '../services';
 // import { isLoading, data } from "../services";
-import LoadingOverlay from "../Components/atoms/LoadingOverlay";
+// import LoadingOverlay from "../Components/atoms/LoadingOverlay";
+import LoadingOverlay from '../components/atoms/LoadingOverlay';
 
 const RestaurantListScreen = () => {
   const { data, isLoading } = useFetchRestaurants();
@@ -46,14 +48,14 @@ const RestaurantListScreen = () => {
   }
 
   const navigateToDetails = (id) => {
-    navigation.navigate("DetailsScreen", {
+    navigation.navigate('DetailsScreen', {
       restaurantId: id,
     });
   };
 
   return (
     <View style={styles.container}>
-      <HeaderRestaurants title={"Restaurantes"} />
+      <HeaderRestaurants title={'Restaurantes'} />
       {/* <View style={styles.containerRestaurants}> */}
       {/* <TouchableOpacity onPress={navigateToDetails}>
           <Text style={styles.RestaurantCardText}></Text>
@@ -67,7 +69,7 @@ const RestaurantListScreen = () => {
             <TouchableOpacity
               style={styles.card}
               onPress={() => {
-                navigation.navigate("DetailsScreen", {
+                navigation.navigate('DetailsScreen', {
                   restaurantId: item.id,
                 });
               }}
@@ -120,17 +122,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 22,
     borderRadius: 12,
     backgroundColor: GlobalStyles.colors.primary100,
-    overflow: "hidden",
+    overflow: 'hidden',
     elevation: 5,
   },
   cardImage: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
   cardInfo: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
-    width: "100%",
+    width: '100%',
     padding: 10,
     borderBottomLeftRadius: 12,
     borderBottomRightRadius: 12,
