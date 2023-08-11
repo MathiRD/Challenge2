@@ -66,7 +66,11 @@ const RestaurantListScreen = () => {
           <View style={styles.cardContainer}>
             <TouchableOpacity
               style={styles.card}
-              onPress={() => navigateToDetails(item.id)}
+              onPress={() => {
+                navigation.navigate("DetailsScreen", {
+                  restaurantId: item.id,
+                });
+              }}
             >
               <Image
                 source={{ uri: item.coverImageUrl }}
@@ -135,12 +139,6 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.primary0,
     elevation: 5,
     lineHeight: 32,
-  },
-  menuImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginHorizontal: 5,
   },
 });
 

@@ -18,16 +18,22 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName="InitialScreen"
-            screenOptions={{ headerShown: false }}
+            // screenOptions={{ headerShown: false }}
           >
-            <Stack.Screen name="InitialScreen" component={InitialScreen} />
+            <Stack.Screen
+              name="InitialScreen"
+              component={InitialScreen}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="restaurantListScreen"
               component={RestaurantListScreen}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               name="DetailsScreen"
               component={RestaurantDetailsScreen}
+              // options={{ headerTransparent: true }}
             />
           </Stack.Navigator>
         </NavigationContainer>
