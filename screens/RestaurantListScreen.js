@@ -4,22 +4,22 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  FlatList,
-} from "react-native";
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { ActivityIndicator } from "react-native";
+  FlatList
+} from 'react-native'
+import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { ActivityIndicator } from 'react-native'
 // import HeaderRestaurants from "../Components/Header";
-import HeaderRestaurants from "../components/Header";
-import { GlobalStyles } from "../constants/style";
-import useFetchRestaurants from "../services";
+import HeaderRestaurants from '../Components/atoms/Header'
+import { GlobalStyles } from '../constants/style'
+import useFetchRestaurants from '../services'
 // import { isLoading, data } from "../services";
-import LoadingOverlay from "../components/atoms/LoadingOverlay";
+import LoadingOverlay from '../components/atoms/LoadingOverlay'
 
 const RestaurantListScreen = () => {
-  const { data, isLoading } = useFetchRestaurants();
-  const navigation = useNavigation();
+  const { data, isLoading } = useFetchRestaurants()
+  const navigation = useNavigation()
 
   // const [restaurants, setRestaurants] = useState([])
   // const [loading, setLoading] = useState(true)
@@ -42,18 +42,18 @@ const RestaurantListScreen = () => {
   //   }
 
   if (isLoading) {
-    return <LoadingOverlay />;
+    return <LoadingOverlay />
   }
 
-  const navigateToDetails = (id) => {
-    navigation.navigate("DetailsScreen", {
-      restaurantId: id,
-    });
-  };
+  const navigateToDetails = id => {
+    navigation.navigate('DetailsScreen', {
+      restaurantId: id
+    })
+  }
 
   return (
     <View style={styles.container}>
-      <HeaderRestaurants title={"Restaurantes"} />
+      <HeaderRestaurants title={'Restaurantes'} />
       {/* <View style={styles.containerRestaurants}> */}
       {/* <TouchableOpacity onPress={navigateToDetails}>
           <Text style={styles.RestaurantCardText}></Text>
@@ -61,7 +61,7 @@ const RestaurantListScreen = () => {
       {/* </View> */}
       <FlatList
         data={data}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.cardContainer}>
             <TouchableOpacity
@@ -92,13 +92,13 @@ const RestaurantListScreen = () => {
         )}
       />
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: GlobalStyles.colors.primary400,
-    flex: 1,
+    flex: 1
   },
   cardContainer: {
     // marginTop: 10,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     // flex: 1,
   },
   RestaurantCardText: {
-    color: GlobalStyles.colors.primary0,
+    color: GlobalStyles.colors.primary0
   },
   card: {
     width: 370,
@@ -116,32 +116,32 @@ const styles = StyleSheet.create({
     marginHorizontal: 22,
     borderRadius: 12,
     backgroundColor: GlobalStyles.colors.primary100,
-    overflow: "hidden",
-    elevation: 5,
+    overflow: 'hidden',
+    elevation: 5
   },
   cardImage: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%'
   },
   cardInfo: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
-    width: "100%",
+    width: '100%',
     padding: 10,
     borderBottomLeftRadius: 12,
-    borderBottomRightRadius: 12,
+    borderBottomRightRadius: 12
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
     elevation: 5,
-    lineHeight: 32,
+    lineHeight: 32
   },
   menuImage: {
     width: 50,
     height: 50,
     borderRadius: 8,
-    marginHorizontal: 5,
-  },
-});
+    marginHorizontal: 5
+  }
+})
 
-export default RestaurantListScreen;
+export default RestaurantListScreen
