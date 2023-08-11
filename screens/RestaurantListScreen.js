@@ -6,61 +6,26 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { ActivityIndicator } from 'react-native';
-// import HeaderRestaurants from "../Components/Header";
-// import HeaderRestaurants from "../Components/atoms/Header";
 import HeaderRestaurants from '../component/atoms/Header';
 import { GlobalStyles } from '../constants/style';
 import useFetchRestaurants from '../services';
-// import { isLoading, data } from "../services";
-// import LoadingOverlay from "../Components/atoms/LoadingOverlay";
+
 import LoadingOverlay from '../component/atoms/LoadingOverlay';
 
 const RestaurantListScreen = () => {
   const { data, isLoading } = useFetchRestaurants();
   const navigation = useNavigation();
 
-  // const [restaurants, setRestaurants] = useState([])
-  // const [loading, setLoading] = useState(true)
-
-  // useEffect(() => {
-  //   axios
-  //   .get('https://8jcox47hg2.execute-api.us-east-2.amazonaws.com/dev')
-  //   .then(response => {
-  //     setRestaurants(response.data.body.restaurants)
-  //     setLoading(false)
-  //   })
-  //   .catch(error => {
-  //     console.error(error)
-  //       setLoading(false)
-  //     })
-  //   })
-
-  //   if (loading) {
-  //     return <ActivityIndicator />
-  //   }
-
   if (isLoading) {
     return <LoadingOverlay />;
   }
 
-  const navigateToDetails = (id) => {
-    navigation.navigate('DetailsScreen', {
-      restaurantId: id,
-    });
-  };
-
   return (
     <View style={styles.container}>
       <HeaderRestaurants title={'Restaurantes'} />
-      {/* <View style={styles.containerRestaurants}> */}
-      {/* <TouchableOpacity onPress={navigateToDetails}>
-          <Text style={styles.RestaurantCardText}></Text>
-        </TouchableOpacity> */}
-      {/* </View> */}
+
       <FlatList
         data={data}
         keyExtractor={(item) => item.id.toString()}
@@ -82,17 +47,6 @@ const RestaurantListScreen = () => {
               <View style={styles.cardInfo}>
                 <Text style={styles.cardTitle}>{item.name}</Text>
               </View>
-              {/* <FlatList
-              data={item.menu}
-              keyExtractor={(menuItem, index) => `${item.id}-${index}`}
-              horizontal
-              renderItem={({ item: menuItem }) => (
-                <Image
-                  source={{ uri: menuItem.imageUrl }}
-                  style={styles.menuImage}
-                />
-              )}
-            /> */}
             </TouchableOpacity>
           </View>
         )}

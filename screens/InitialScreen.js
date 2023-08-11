@@ -7,7 +7,6 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import Background from '../assets/imgs/background.png';
 import Button from '../component/atoms/Button';
-// const Background = require("../assets/imgs/background.png");
 
 SplashScreen.preventAutoHideAsync();
 
@@ -33,24 +32,10 @@ const InitialScreen = () => {
         <View style={styles.content}>
           <View style={styles.MainScreenTextContainer}>
             <View style={styles.MSContainer}>
-              <Text
-                style={[
-                  styles.MainScreenText,
-                  // { fontFamily: 'BebasNeue-Regular' }
-                ]}
-              >
-                FIND D BEST
-              </Text>
+              <Text style={[styles.MainScreenText]}>FIND D BEST</Text>
             </View>
             <View>
-              <Text
-                style={[
-                  styles.MainScreenSubText,
-                  // { fontFamily: 'Poppins-Regular' }
-                ]}
-              >
-                Restaurant
-              </Text>
+              <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
             </View>
           </View>
           <Button />
