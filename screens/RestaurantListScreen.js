@@ -140,6 +140,12 @@ const styles = StyleSheet.create({
     elevation: 5,
     lineHeight: 32,
   },
+  menuImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 8,
+    marginHorizontal: 5,
+  },
 });
 
 export default RestaurantListScreen;
