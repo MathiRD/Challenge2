@@ -6,13 +6,14 @@ const RenderingStars = ({ rating }) => {
     const remainingStar = Math.floor(5 - rating);
   
     return (
-      <View style={styles.container}>
+      <View style={styles.containerStars}>
         {Array.from({ length: filledStars }).map((_, index) => (
           <Ionicons
             key={index}
             name="star-sharp"
             size={20}
             color="orange"
+            style={styles.starIcon}
           />
         ))}
         {rating % 1 !== 0 && (
@@ -36,14 +37,14 @@ const RenderingStars = ({ rating }) => {
   };
 
 const styles = StyleSheet.create({
-    container: {
+    containerStars: {
       flexDirection: 'row',
       alignItems: 'center',
+      marginLeft: 18
     },
-    ratingText: {
-      marginLeft: 5,
-      fontSize: 16,
-    },
+    starIcon: {
+        marginRight: 5
+    }
   });
 
 
