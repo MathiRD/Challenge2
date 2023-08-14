@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   cardImage: {
     width: '100%',
     height: '100%',
+    opacity: 0.6,
   },
   cardInfo: {
     position: 'absolute',
