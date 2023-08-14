@@ -26,17 +26,26 @@ const RestaurantDetailsScreen = ({ route }) => {
         <Text style={styles.cardTitle}>{selectedRestaurant.name}</Text>
         <Text style={styles.rank}>{selectedRestaurant.rating}</Text>
       </View>
-      <FlatList
-        data={selectedRestaurant.menu}
-        keyExtractor={(item) => item.title.toString()}
-        horizontal
-        renderItem={({ item }) => (
-          <View style={styles.menuCard}>
-            <Image source={{ uri: item.imageUrl }} style={styles.menuImage} />
-            <Text style={styles.cardText}>{item.title}</Text>
-          </View>
-        )}
-      />
+      <View>
+        <Text style={styles.subtitle}>Sobre o restaurante </Text>
+        <Text style={styles.desription}>{selectedRestaurant.description}</Text>
+      </View>
+      <View>
+        <Text style={styles.subtitle}>Menu</Text>
+      </View>
+      <View style={styles.containerFlat}>
+        <FlatList
+          data={selectedRestaurant.menu}
+          keyExtractor={(item) => item.title.toString()}
+          horizontal
+          renderItem={({ item }) => (
+            <View style={styles.menuCard}>
+              <Image source={{ uri: item.imageUrl }} style={styles.menuImage} />
+              <Text style={styles.cardText}>{item.title}</Text>
+            </View>
+          )}
+        />
+      </View>
     </View>
   );
 };
@@ -51,11 +60,13 @@ const styles = StyleSheet.create({
   cardImage: {
     width: 414,
     height: 361,
+    borderRadius: 20,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
     fontFamily: 'Poppins-Bold',
     fontSize: 32,
+    paddingHorizontal: 20,
     position: 'absolute',
     bottom: '10%',
   },
@@ -63,17 +74,39 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.primary0,
     fontFamily: 'Poppins-Bold',
     fontSize: 32,
+    paddingHorizontal: 20,
     position: 'absolute',
     bottom: '0%',
   },
-  menuImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginHorizontal: 5,
+  subtitle: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 20,
+    color: GlobalStyles.colors.primary0,
+    paddingHorizontal: 20,
   },
-  menuCard: {},
+  desription: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    color: GlobalStyles.colors.primary0,
+    paddingHorizontal: 20,
+    marginBottom: 10,
+  },
+  menuImage: {
+    width: '100%',
+    height: 104,
+    borderRadius: 8,
+  },
+  menuCard: {
+    borderColor: GlobalStyles.colors.buttonPrincipal,
+    height: 164,
+    width: 170,
+    marginHorizontal: 19,
+    marginVertical: 10,
+    backgroundColor: GlobalStyles.colors.primary100,
+    borderRadius: 8,
+  },
   cardText: {
     color: 'white',
   },
+  containerFlat: {},
 });
