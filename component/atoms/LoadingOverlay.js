@@ -1,6 +1,6 @@
 import { View, ActivityIndicator, StyleSheet } from "react-native";
 
-// import { GlobalStyles } from "../../constants/styles";
+import { GlobalStyles } from "../../constants/style";
 
 function LoadingOverlay() {
   return (
@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 24,
-    // backgroundColor: GlobalStyles.colors.primary700,
+    backgroundColor: GlobalStyles.colors.primary400
   },
 });

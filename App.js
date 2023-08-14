@@ -18,7 +18,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName="InitialScreen"
-            // screenOptions={{ headerShown: false }}
+            screenOptions={{ headerShown: false }}
           >
             <Stack.Screen
               name="InitialScreen"
@@ -33,7 +33,7 @@ export default function App() {
             <Stack.Screen
               name="DetailsScreen"
               component={RestaurantDetailsScreen}
-              // options={{ headerTransparent: true }}
+              options={{ headerTransparent: true }}
             />
           </Stack.Navigator>
         </NavigationContainer>
