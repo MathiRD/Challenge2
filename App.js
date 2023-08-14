@@ -6,6 +6,7 @@ import InitialScreen from './screens/InitialScreen';
 import RestaurantListScreen from './screens/RestaurantListScreen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import RestaurantDetailsScreen from './screens/RestaurantDetailsScreen';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Stack = createStackNavigator();
 const queryClient = new QueryClient();
@@ -33,7 +34,18 @@ export default function App() {
             <Stack.Screen
               name="DetailsScreen"
               component={RestaurantDetailsScreen}
-              options={{ headerTransparent: true }}
+              options={{
+                headerTransparent: true,
+                title: '',
+                headerTintColor: 'white',
+                // headerLeft: () => {
+                //   <Ionicons
+                //     name="chevron-back-outline"
+                //     size={24}
+                //     color="white"
+                //   />;
+                // },
+              }}
             />
           </Stack.Navigator>
         </NavigationContainer>
