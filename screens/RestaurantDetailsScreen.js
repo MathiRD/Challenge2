@@ -5,7 +5,6 @@ import { GlobalStyles } from '../constants/style';
 import LoadingOverlay from '../component/atoms/LoadingOverlay';
 import RenderingStars from '../component/molecules/RenderingStars';
 
-
 const RestaurantDetailsScreen = ({ route }) => {
   const { data, isLoading } = useFetchRestaurants();
 
@@ -20,24 +19,22 @@ const RestaurantDetailsScreen = ({ route }) => {
 
   return (
     <View style={styles.outerContainer}>
-      <View>
+      <View style={styles.imageContainer}>
         <Image
           source={{ uri: selectedRestaurant.coverImageUrl }}
           style={styles.cardImage}
         />
         <Text style={styles.cardTitle}>{selectedRestaurant.name}</Text>
-        <View>
-          <RenderingStars rating={selectedRestaurant.rating}/>
+        <View style={styles.starsContainer}>
+          <RenderingStars rating={selectedRestaurant.rating} />
         </View>
       </View>
-      <View>
+      <View style={styles.aboutContainer}>
         <Text style={styles.subtitle}>Sobre o restaurante </Text>
         <Text style={styles.desription}>{selectedRestaurant.description}</Text>
       </View>
-      <View>
+      <View style={styles.flatListContainer}>
         <Text style={styles.subtitle}>Menu</Text>
-      </View>
-      <View style={styles.containerFlat}>
         <FlatList
           data={selectedRestaurant.menu}
           keyExtractor={(item) => item.title.toString()}
@@ -61,10 +58,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: GlobalStyles.colors.primary400,
   },
+  imageContainer: {
+    flex: 0.5,
+  },
   cardImage: {
-    width: 414,
-    height: 361,
-    borderRadius: 20,
+    width: '100%',
+    height: '100%',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
@@ -74,13 +75,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: '10%',
   },
-  rank: {
-    color: GlobalStyles.colors.primary0,
-    fontFamily: 'Poppins-Bold',
-    fontSize: 32,
-    paddingHorizontal: 20,
-    position: 'absolute',
-    bottom: '0%',
+  starsContainer: {
+    bottom: '12%',
+  },
+
+  aboutContainer: {
+    flex: 0.2,
+    paddingTop: 20,
   },
   subtitle: {
     fontFamily: 'Poppins-Bold',
@@ -112,5 +113,7 @@ const styles = StyleSheet.create({
   cardText: {
     color: 'white',
   },
-  containerFlat: {},
+  flatListContainer: {
+    flex: 0.5,
+  },
 });
