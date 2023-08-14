@@ -3,6 +3,8 @@ import React from 'react';
 import useFetchRestaurants from '../services';
 import { GlobalStyles } from '../constants/style';
 import LoadingOverlay from '../component/atoms/LoadingOverlay';
+import RenderingStars from '../component/molecules/RenderingStars';
+
 
 const RestaurantDetailsScreen = ({ route }) => {
   const { data, isLoading } = useFetchRestaurants();
@@ -24,7 +26,9 @@ const RestaurantDetailsScreen = ({ route }) => {
           style={styles.cardImage}
         />
         <Text style={styles.cardTitle}>{selectedRestaurant.name}</Text>
-        <Text style={styles.rank}>{selectedRestaurant.rating}</Text>
+        <View>
+          <RenderingStars rating={selectedRestaurant.rating}/>
+        </View>
       </View>
       <View>
         <Text style={styles.subtitle}>Sobre o restaurante </Text>
