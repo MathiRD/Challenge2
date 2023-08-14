@@ -85,11 +85,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   desription: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins-Regular',
     fontSize: 14,
     color: GlobalStyles.colors.primary0,
     paddingHorizontal: 20,
-    marginBottom: 40,
+    marginBottom: 10,
   },
   menuImage: {
     width: '100%',
