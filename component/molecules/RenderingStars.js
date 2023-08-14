@@ -1,5 +1,5 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { View, Text, StyleSheet} from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 
 const RenderingStars = ({ rating }) => {
     const filledStars = Math.floor(rating);
@@ -8,28 +8,24 @@ const RenderingStars = ({ rating }) => {
     return (
       <View style={styles.containerStars}>
         {Array.from({ length: filledStars }).map((_, index) => (
-          <Ionicons
+          <Image
             key={index}
-            name="star-sharp"
-            size={20}
-            color="orange"
+            source={require('../../assets/icons/star.png')}
             style={styles.starIcon}
           />
         ))}
         {rating % 1 !== 0 && (
-          <Ionicons
+          <Image
             key={'half-star'}
-            name="star-half-sharp"
-            size={20}
-            color="orange"
+            source={require('../../assets/icons/half-star.png')}
+            style={styles.starIconHalf}
           />
         )}
         {Array.from({ length: remainingStar }).map((_, index) => (
           <Ionicons
             key={filledStars + (rating % 1 !== 0 ? 1 : 0) + index}
-            name="star-sharp"
-            size={20}
-            color="orange"
+            name="star"
+            style={styles.starIcon}
           />
         ))}
       </View>
@@ -43,8 +39,15 @@ const styles = StyleSheet.create({
       marginLeft: 18
     },
     starIcon: {
-        marginRight: 5
-    }
+        marginRight: 5,
+        width: 15,
+        height: 15
+    },
+    starIconHalf: {
+        marginRight: 5,
+        width: 8,
+        height: 15,
+    },
   });
 
 
