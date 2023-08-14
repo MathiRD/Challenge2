@@ -19,7 +19,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName="InitialScreen"
-            //screenOptions={{ headerShown: false }}
+            screenOptions={{ headerShown: false }}
           >
             <Stack.Screen
               name="InitialScreen"
