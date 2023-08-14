@@ -18,6 +18,14 @@ const RestaurantDetailsScreen = ({ route }) => {
 
   return (
     <View style={styles.outerContainer}>
+      <View>
+        <Image
+          source={{ uri: selectedRestaurant.coverImageUrl }}
+          style={styles.cardImage}
+        />
+        <Text style={styles.cardTitle}>{selectedRestaurant.name}</Text>
+        <Text style={styles.rank}>{selectedRestaurant.rating}</Text>
+      </View>
       <FlatList
         data={selectedRestaurant.menu}
         keyExtractor={(item) => item.title.toString()}
@@ -39,6 +47,24 @@ const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     backgroundColor: GlobalStyles.colors.primary400,
+  },
+  cardImage: {
+    width: 414,
+    height: 361,
+  },
+  cardTitle: {
+    color: GlobalStyles.colors.primary0,
+    fontFamily: 'Poppins-Bold',
+    fontSize: 32,
+    position: 'absolute',
+    bottom: '10%',
+  },
+  rank: {
+    color: GlobalStyles.colors.primary0,
+    fontFamily: 'Poppins-Bold',
+    fontSize: 32,
+    position: 'absolute',
+    bottom: '0%',
   },
   menuImage: {
     width: 50,
