@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
   starsContainer: {
     bottom: '12%',
   },
-
   aboutContainer: {
     flex: 0.2,
     paddingTop: 20,
@@ -107,11 +106,14 @@ const styles = StyleSheet.create({
     width: 170,
     marginHorizontal: 19,
     marginVertical: 10,
-    backgroundColor: GlobalStyles.colors.primary100,
+    backgroundColor: GlobalStyles.colors.primary900,
     borderRadius: 8,
   },
   cardText: {
-    color: 'white',
+    fontFamily: 'Poppins-Bold',
+    fontSize: 14,
+    padding: 10,
+    color: GlobalStyles.colors.primary0,
   },
   flatListContainer: {
     flex: 0.5,
