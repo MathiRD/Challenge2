@@ -15,7 +15,6 @@ const RestaurantListScreen = () => {
 
   return (
     <View style={styles.container}>
-      <HeaderRestaurants title={'Restaurantes'} />
       <FlatList
         data={data}
         keyExtractor={(item) => item.id.toString()}

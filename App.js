@@ -6,6 +6,7 @@ import InitialScreen from './screens/InitialScreen';
 import RestaurantListScreen from './screens/RestaurantListScreen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import RestaurantDetailsScreen from './screens/RestaurantDetailsScreen';
+import { GlobalStyles } from './constants/style';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Stack = createStackNavigator();
@@ -29,7 +30,22 @@ export default function App() {
             <Stack.Screen
               name="restaurantListScreen"
               component={RestaurantListScreen}
-              options={{ headerShown: false }}
+              options={{
+                headerShown: true,
+                title: 'Restaurants',
+                headerTintColor: GlobalStyles.colors.primary0,
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 18,
+                },
+                headerStyle: {
+                  backgroundColor: GlobalStyles.colors.primary600,
+                  height: 90,
+                  elevation: 0,
+                },
+                headerLeft: null,
+              }}
             />
             <Stack.Screen
               name="DetailsScreen"
