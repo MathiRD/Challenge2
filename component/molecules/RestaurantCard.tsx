@@ -43,11 +43,14 @@ const styles = StyleSheet.create({
     flexShrink: 0,
     marginVertical: 10,
     marginHorizontal: 22,
-    elevation: 5,
+    elevation: 9,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 5,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.6,
+    shadowRadius: 5.46,
   },
   cardImage: {
     width: '100%',

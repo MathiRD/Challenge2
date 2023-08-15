@@ -58,9 +58,13 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 0.5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 5,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.6,
+    shadowRadius: 5.46,
+    elevation: 9,
   },
   cardImage: {
     width: '100%',
