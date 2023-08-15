@@ -31,7 +31,7 @@ const RestaurantDetailsScreen = ({ route }) => {
         </View>
       </View>
       <View style={styles.aboutContainer}>
-        <Text style={styles.subtitle}>Sobre o restaurante </Text>
+        <Text style={styles.subtitle}>About the restaurant </Text>
         <Text style={styles.desription}>{selectedRestaurant.description}</Text>
       </View>
       <View style={styles.flatListContainer}>
