@@ -9,7 +9,7 @@ import Button from '../component/atoms/Button';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { CompositeNavigationProp } from '@react-navigation/native';
 import { InitialScreenNavigationProp } from '../types/types';
-import { LinearGradient } from 'expo-linear-gradient';
+import BackGround from '../component/atoms/LinearGradient';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,17 +35,7 @@ const InitialScreen = () => {
     return null;
   };
 
-  const BackGround = ({ children }) => {
-    return (
-      <LinearGradient
-      colors={['#000', 'transparent']}
-      style= {{
-        flex: 1,
-      }}>
-        {children} 
-      </LinearGradient>
-    )
-  }
+
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
