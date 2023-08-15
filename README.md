@@ -18,7 +18,7 @@ Este é um projeto desenvolvido durante o programa de bolsas de React Native da 
 
 Com as dependências instaladas, você pode executar o projeto seguindo estas etapas:
 
-1. No terminal, ainda no diretório do projeto, execute o comando `npm start`.
+1. No terminal, ainda no diretório do projeto, execute o comando `npx expo start`.
 2. O projeto será iniciado e você poderá acessá-lo pelo seu emulador ou celular.
    
 ---
