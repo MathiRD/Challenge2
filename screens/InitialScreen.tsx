@@ -7,11 +7,14 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import Background from '../assets/imgs/background.png';
 import Button from '../component/atoms/Button';
+import type { StackNavigationProp } from '@react-navigation/stack';
+import type { CompositeNavigationProp } from '@react-navigation/native';
+import { InitialScreenNavigationProp } from '../types/types';
 
 SplashScreen.preventAutoHideAsync();
 
 const InitialScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<InitialScreenNavigationProp>();
 
   const [fontsLoaded] = useFonts({
     'BebasNeue-Regular': require('../assets/fonts/BebasNeue-Regular.ttf'),

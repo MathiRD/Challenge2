@@ -1,9 +1,14 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { GlobalStyles } from '../../constants/style';
+import {
+  DetailsScreenNavigationProp,
+  Restaurant,
+  RestaurantProp,
+} from '../../types/types';
 
-const RestaurantCard = ({ restaurant }) => {
-  const navigation = useNavigation();
+const RestaurantCard = ({ restaurant }: RestaurantProp) => {
+  const navigation = useNavigation<DetailsScreenNavigationProp>();
 
   return (
     <View style={styles.cardContainer}>

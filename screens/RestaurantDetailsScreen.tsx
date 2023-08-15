@@ -5,11 +5,12 @@ import { GlobalStyles } from '../constants/style';
 import LoadingOverlay from '../component/atoms/LoadingOverlay';
 import RenderingStars from '../component/molecules/RenderingStars';
 import Menu from '../component/molecules/MenuCard';
+import { DetailsScreenProp, Restaurant } from '../types/types';
 
-const RestaurantDetailsScreen = ({ route }) => {
+const RestaurantDetailsScreen = ({ route }: DetailsScreenProp) => {
   const { data, isLoading } = useFetchRestaurants();
 
-  const selectedRestaurantId = route.params?.restaurantId;
+  const selectedRestaurantId = route.params.restaurantId;
   const selectedRestaurant = data.find(
     (restaurant) => restaurant.id === selectedRestaurantId
   );
@@ -40,7 +41,7 @@ const RestaurantDetailsScreen = ({ route }) => {
           data={selectedRestaurant.menu}
           keyExtractor={(item) => item.title.toString()}
           horizontal
-          renderItem={({ item }) => <Menu item={item} />}
+          renderItem={({ item }) => <Menu restaurantMenu={item} />}
         />
       </View>
     </View>
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
     height: '100%',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    opacity: 0.6,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,

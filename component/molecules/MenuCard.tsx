@@ -1,12 +1,16 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { GlobalStyles } from '../../constants/style';
+import { RestaurantMenuProp } from '../../types/types';
 
-const Menu = ({ item }) => {
+const Menu = ({ restaurantMenu }: RestaurantMenuProp) => {
   return (
     <View style={styles.menuCard}>
-      <Image source={{ uri: item.imageUrl }} style={styles.menuImage} />
-      <Text style={styles.cardText}>{item.title}</Text>
+      <Image
+        source={{ uri: restaurantMenu.imageUrl }}
+        style={styles.menuImage}
+      />
+      <Text style={styles.cardText}>{restaurantMenu.title}</Text>
     </View>
   );
 };

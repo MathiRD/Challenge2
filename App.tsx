@@ -8,8 +8,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import RestaurantDetailsScreen from './screens/RestaurantDetailsScreen';
 import { GlobalStyles } from './constants/style';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { RootStackParamList } from './types/types';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
 export default function App() {

@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { GlobalStyles } from '../../constants/style';
+import { ButtonProps } from '../../types/types';
 
-const Button = ({ children, onClick, style }) => {
+const Button = ({ children, onClick, style }: ButtonProps) => {
   return (
     <View style={style}>
       <Pressable
