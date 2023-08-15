@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     height: '100%',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    opacity: 0.8,
+    opacity: 0.6,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
