@@ -5,7 +5,6 @@ import { useFonts } from 'expo-font';
 import { GlobalStyles } from '../constants/style';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
-import Background from '../assets/imgs/background.png';
 import Button from '../component/atoms/Button';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { CompositeNavigationProp } from '@react-navigation/native';
@@ -37,7 +36,7 @@ const InitialScreen = () => {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <ImageBackground source={Background} style={styles.BackgroundImageStyle}>
+      <ImageBackground source={require('../assets/imgs/background.png')} style={styles.BackgroundImageStyle}>
         <View style={styles.content}>
           <View style={styles.MainScreenTextContainer}>
             <View style={styles.MSContainer}>
