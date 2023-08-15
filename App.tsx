@@ -44,6 +44,10 @@ export default function App() {
                   backgroundColor: GlobalStyles.colors.primary600,
                   height: 90,
                   elevation: 0,
+                  shadowOpacity: 0,
+                  shadowColor: 'transparent',
+                  shadowOffset: { width: 0, height: 0 },
+                  shadowRadius: 0,
                 },
                 headerLeft: null,
               }}
