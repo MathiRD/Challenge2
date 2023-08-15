@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     bottom: '10%',
   },
   starsContainer: {
-    bottom: '12%',
+    bottom: '9%',
   },
   aboutContainer: {
     flex: 0.2,
