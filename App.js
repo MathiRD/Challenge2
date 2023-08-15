@@ -51,6 +51,7 @@ export default function App() {
               name="DetailsScreen"
               component={RestaurantDetailsScreen}
               options={{
+                headerShown: true,
                 headerTransparent: true,
                 title: '',
                 headerTintColor: 'white',
@@ -73,7 +74,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: GlobalStyles.colors.primary0,
     alignItems: 'center',
     justifyContent: 'center',
   },
