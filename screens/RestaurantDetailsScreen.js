@@ -4,6 +4,7 @@ import useFetchRestaurants from '../services';
 import { GlobalStyles } from '../constants/style';
 import LoadingOverlay from '../component/atoms/LoadingOverlay';
 import RenderingStars from '../component/molecules/RenderingStars';
+import Menu from '../component/molecules/MenuCard';
 
 const RestaurantDetailsScreen = ({ route }) => {
   const { data, isLoading } = useFetchRestaurants();
@@ -39,12 +40,7 @@ const RestaurantDetailsScreen = ({ route }) => {
           data={selectedRestaurant.menu}
           keyExtractor={(item) => item.title.toString()}
           horizontal
-          renderItem={({ item }) => (
-            <View style={styles.menuCard}>
-              <Image source={{ uri: item.imageUrl }} style={styles.menuImage} />
-              <Text style={styles.cardText}>{item.title}</Text>
-            </View>
-          )}
+          renderItem={({ item }) => <Menu item={item} />}
         />
       </View>
     </View>
@@ -94,26 +90,6 @@ const styles = StyleSheet.create({
     color: GlobalStyles.colors.primary0,
     paddingHorizontal: 20,
     marginBottom: 10,
-  },
-  menuImage: {
-    width: '100%',
-    height: 104,
-    borderRadius: 8,
-  },
-  menuCard: {
-    borderColor: GlobalStyles.colors.buttonPrincipal,
-    height: 164,
-    width: 170,
-    marginHorizontal: 19,
-    marginVertical: 10,
-    backgroundColor: GlobalStyles.colors.primary900,
-    borderRadius: 8,
-  },
-  cardText: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 14,
-    padding: 10,
-    color: GlobalStyles.colors.primary0,
   },
   flatListContainer: {
     flex: 0.5,
