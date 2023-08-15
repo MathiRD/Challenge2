@@ -57,13 +57,17 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 0.5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 5,
   },
   cardImage: {
     width: '100%',
     height: '100%',
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    opacity: 0.6,
+    opacity: 0.8,
   },
   cardTitle: {
     color: GlobalStyles.colors.primary0,
