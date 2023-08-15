@@ -9,6 +9,7 @@ import Button from '../component/atoms/Button';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { CompositeNavigationProp } from '@react-navigation/native';
 import { InitialScreenNavigationProp } from '../types/types';
+import { LinearGradient } from 'expo-linear-gradient';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -32,28 +33,42 @@ const InitialScreen = () => {
 
   if (!fontsLoaded) {
     return null;
+  };
+
+  const BackGround = ({ children }) => {
+    return (
+      <LinearGradient
+      colors={['#000', 'transparent']}
+      style= {{
+        flex: 1,
+      }}>
+        {children} 
+      </LinearGradient>
+    )
   }
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <ImageBackground source={require('../assets/imgs/background.png')} style={styles.BackgroundImageStyle}>
-        <View style={styles.content}>
-          <View style={styles.MainScreenTextContainer}>
-            <View style={styles.MSContainer}>
-              <Text style={[styles.MainScreenText]}>FIND D BEST</Text>
+        <ImageBackground source={require('../assets/imgs/background.png')} style={styles.BackgroundImageStyle}>
+          <BackGround>
+            <View style={styles.content}>
+              <View style={styles.MainScreenTextContainer}>
+                <View style={styles.MSContainer}>
+                  <Text style={[styles.MainScreenText]}>FIND D BEST</Text>
+                </View>
+                <View>
+                  <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
+                </View>
+              </View>
+              <Button
+                onClick={navegarParaRestaurantes}
+                style={styles.buttonInicial}
+              >
+                Acess
+              </Button>
             </View>
-            <View>
-              <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
-            </View>
-          </View>
-          <Button
-            onClick={navegarParaRestaurantes}
-            style={styles.buttonInicial}
-          >
-            Acess
-          </Button>
-        </View>
-      </ImageBackground>
+          </BackGround>
+        </ImageBackground>
     </View>
   );
 };
