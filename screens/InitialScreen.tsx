@@ -54,7 +54,7 @@ const InitialScreen = () => {
                 onClick={navegarParaRestaurantes}
                 style={styles.buttonInicial}
               >
-                Acess
+                Access
               </Button>
             </View>
           </BackGround>
