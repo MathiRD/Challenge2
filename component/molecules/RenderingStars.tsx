@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
     marginLeft: 18,
   },
   starIcon: {
-    marginRight: 5,
+    marginRight: 8,
     width: 15,
     height: 15,
   },
   starIconHalf: {
-    marginRight: 5,
+    marginRight: 8,
     width: 8,
     height: 15,
   },
