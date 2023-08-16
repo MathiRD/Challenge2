@@ -53,7 +53,7 @@ const InitialScreen = () => {
             </View>
             <Button
               onClick={navegarParaRestaurantes}
-              style={styles.buttonInicial}
+              style={styles.InitialButton}
             >
               Access
             </Button>
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
     flex: 1,
+    paddingBottom: 50
   },
   MSContainer: {},
   MSSubContainer: {},
@@ -96,9 +97,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '400',
   },
-  buttonInicial: {
+  InitialButton: {
     backgroundColor: GlobalStyles.colors.buttonPrincipal,
-    marginBottom: 30,
     borderRadius: 8,
     width: '95%',
   },
