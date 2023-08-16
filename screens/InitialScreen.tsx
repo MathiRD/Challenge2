@@ -33,32 +33,33 @@ const InitialScreen = () => {
 
   if (!fontsLoaded) {
     return null;
-  };
-
-
+  }
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-        <ImageBackground source={require('../assets/imgs/background.png')} style={styles.BackgroundImageStyle}>
-          <BackGround>
-            <View style={styles.content}>
-              <View style={styles.MainScreenTextContainer}>
-                <View style={styles.MSContainer}>
-                  <Text style={[styles.MainScreenText]}>FIND D BEST</Text>
-                </View>
-                <View>
-                  <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
-                </View>
+      <ImageBackground
+        source={require('../assets/imgs/background.png')}
+        style={styles.BackgroundImageStyle}
+      >
+        <BackGround>
+          <View style={styles.content}>
+            <View style={styles.MainScreenTextContainer}>
+              <View style={styles.MSContainer}>
+                <Text style={[styles.MainScreenText]}>FIND D BEST</Text>
               </View>
-              <Button
-                onClick={navegarParaRestaurantes}
-                style={styles.buttonInicial}
-              >
-                Access
-              </Button>
+              <View>
+                <Text style={[styles.MainScreenSubText]}>Restaurant</Text>
+              </View>
             </View>
-          </BackGround>
-        </ImageBackground>
+            <Button
+              onClick={navegarParaRestaurantes}
+              style={styles.buttonInicial}
+            >
+              Access
+            </Button>
+          </View>
+        </BackGround>
+      </ImageBackground>
     </View>
   );
 };
@@ -74,15 +75,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
   },
-  MSContainer: {
-    borderCollor: 'red',
-    borderRadius: 1,
-  },
+  MSContainer: {},
   MSSubContainer: {},
   MainScreenTextContainer: {
     flex: 1,
     alignItems: 'center',
-    paddingTop: 70,
+    paddingTop: 100,
   },
   MainScreenText: {
     fontFamily: 'BebasNeue-Regular',
@@ -100,9 +98,9 @@ const styles = StyleSheet.create({
   },
   buttonInicial: {
     backgroundColor: GlobalStyles.colors.buttonPrincipal,
-    marginBottom: 25,
+    marginBottom: 30,
     borderRadius: 8,
-    marginVertical: 25,
+    width: '95%',
   },
 });
 

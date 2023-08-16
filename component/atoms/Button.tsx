@@ -20,7 +20,6 @@ const Button = ({ children, onClick, style }: ButtonProps) => {
 
 const styles = StyleSheet.create({
   button: {
-    paddingHorizontal: 120,
     paddingVertical: 10,
   },
   buttonText: {
