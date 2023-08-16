@@ -14,11 +14,13 @@ const RestaurantListScreen = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={data}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <RestaurantCard restaurant={item} />}
-      />
+      <View style={styles.listContainer}>
+        <FlatList
+          data={data}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <RestaurantCard restaurant={item} />}
+        />
+      </View>
     </View>
   );
 };
@@ -27,6 +29,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: GlobalStyles.colors.primary400,
     flex: 1,
+  },
+  listContainer: {
+    marginTop: 15
   },
 });
 
