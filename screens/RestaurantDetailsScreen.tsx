@@ -65,6 +65,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.6,
     shadowRadius: 5.46,
     elevation: 9,
+    backgroundColor: '#000',
+    borderRadius: 20
   },
   cardImage: {
     width: '100%',
