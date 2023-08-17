@@ -1,11 +1,8 @@
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { View, StyleSheet, Image } from 'react-native';
 import { RenderingStarsProp } from '../../types/types';
 
 const RenderingStars = ({ rating }: RenderingStarsProp) => {
   const filledStars = Math.floor(rating);
-  const remainingStar = Math.floor(5 - rating);
 
   return (
     <View style={styles.containerStars}>
@@ -23,13 +20,6 @@ const RenderingStars = ({ rating }: RenderingStarsProp) => {
           style={styles.starIconHalf}
         />
       )}
-      {Array.from({ length: remainingStar }).map((_, index) => (
-        <Ionicons
-          key={filledStars + (rating % 1 !== 0 ? 1 : 0) + index}
-          name="star"
-          style={styles.starIcon}
-        />
-      ))}
     </View>
   );
 };
